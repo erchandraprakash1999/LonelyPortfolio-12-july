@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/LonelyPortfolio-12-july/static/css/main.7735262a.css",
+    "main.js": "/LonelyPortfolio-12-july/static/js/main.9b37fad6.js",
+    "static/js/787.a6d15bb6.chunk.js": "/LonelyPortfolio-12-july/static/js/787.a6d15bb6.chunk.js",
+    "index.html": "/LonelyPortfolio-12-july/index.html",
+    "main.7735262a.css.map": "/LonelyPortfolio-12-july/static/css/main.7735262a.css.map",
+    "main.9b37fad6.js.map": "/LonelyPortfolio-12-july/static/js/main.9b37fad6.js.map",
+    "787.a6d15bb6.chunk.js.map": "/LonelyPortfolio-12-july/static/js/787.a6d15bb6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7735262a.css",
+    "static/js/main.9b37fad6.js"
+  ]
+}
