@@ -39,7 +39,7 @@ export default function PortfolioImage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
 
                 {Image.filter((e)=>{return active==='all'?true:e.name===active}).map((item,index)=>{
-                    return <div className=" bg-white  rounded-lg shadow-md ">
+                    return <div className=" bg-white  rounded-lg shadow-md " key={index}>
                     <div className="relative group">
                         <div className=''>
                         <img src={item.link} alt="" />
