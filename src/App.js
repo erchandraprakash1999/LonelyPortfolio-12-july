@@ -13,7 +13,7 @@ import About from './components/About';
 import { Element } from 'react-scroll';
 function App() {
   return (
-    <>
+    <div className='relative'>
     <Element name='home'>
     <HeaderImageSection />
     </Element>
@@ -26,7 +26,7 @@ function App() {
     <Element name="portfolio"><PortfolioImage/></Element>
     <Element name="testimonials"><Testimonials/></Element>
     <Element name="contact"><ContactForm/></Element>
-    </>
+    </div>
   )
 }
 export default App;

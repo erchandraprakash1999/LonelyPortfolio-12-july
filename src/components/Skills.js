@@ -4,7 +4,7 @@ import { skills } from '../data';
 export default function Skills() {
   return (
     <>
-      <div className=" mx-auto p-8  bg-[linear-gradient(#e5e7eb,white)]">
+      <div className=" mx-auto px-5 sm:px-8  py-9 bg-[linear-gradient(#e5e7eb,white)]">
         <div className="w-[90%] mx-auto">
         <div className="">
             <h2 className="text-4xl font-bold text-gray-900 pb-3 border-b-4 border-pink-500 w-min">{skills.title}</h2>

@@ -4,11 +4,11 @@ export default function About() {
   return (
     <>
       <main >
-    <div id='about' className="flex flex-col lg:flex-row items-center gap-6 justify-center p-8 w-[90%] mx-auto m-6 ">
-        <div className="w-full lg:w-[45%] p-4">
+    <div id='about' className="flex flex-col lg:flex-row items-center gap-6 justify-center p-4 sm:p-8 w-[90%] mx-auto m-6 ">
+        <div className="w-full lg:w-[45%] ">
             <img src={about.image} alt="Woman on Phone" className="rounded"/>
         </div>
-        <div className="w-full lg:w-[60%] p-4">
+        <div className="w-full lg:w-[60%] ">
             <h1 className= " text-3xl md:text-5xl font-semibold mb-4">{about.title}</h1>
             <p className="text-gray-600 mb-8 text-lg">{about.description}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

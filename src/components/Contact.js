@@ -18,12 +18,12 @@ const ContactForm = () => {
           <p className="mt-2 text-gray-600">
             Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.
           </p>
-          <div className="flex space-x-4 mt-4">
+          {/* <div className="flex space-x-4 mt-4">
             <a href="#" className="text-pink-500"><i className="fab fa-twitter"></i></a>
             <a href="#" className="text-pink-500"><i className="fab fa-facebook"></i></a>
             <a href="#" className="text-pink-500"><i className="fab fa-instagram"></i></a>
             <a href="#" className="text-pink-500"><i className="fab fa-linkedin"></i></a>
-          </div>
+          </div> */}
           </div>
         <div className="space-y-4 text-gray-600">
           <p><i className="fas fa-map-marker-alt text-pink-500 mr-2"></i>A108 Adam Street, New York, NY 535022</p>

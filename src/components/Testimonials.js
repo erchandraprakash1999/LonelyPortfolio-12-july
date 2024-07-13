@@ -16,11 +16,11 @@ export default function Testimonials() {
     
   return (
     <div className=' bg-[linear-gradient(180deg,#f2f6f9,#fff)] p-8'>
-      <section id="testimonials" className=" py-12">
+      <section id="testimonials" className=" py-8">
         <div className="container mx-auto">
             <div className=" mb-12">
                 <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 border-pink-500 w-min">{testimonials.title}</h2>
-                <p className="mt-2 text-xl text-gray-600">{testimonials.description}</p>
+                <p className="mt-2 text-lg sm:text-xl text-gray-600 ">{testimonials.description}</p>
             </div>
             <div className=" space-x-5">
   <Slider {...settings}  responsive={[{breakpoint:600,settings:{slidesToShow:1}},{breakpoint:1024,settings:{slidesToShow:2},}]} >

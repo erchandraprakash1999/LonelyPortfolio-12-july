@@ -4,7 +4,7 @@ import { services } from '../data'
 export default function Services() {
   return (
     <div className='bg-[linear-gradient(180deg,#f2f6f9,#fff)] '>
-       <div className="mx-auto p-5 xl:p-8 rounded-lg w-[90%]">
+       <div className="mx-auto px-4 sm:px-5 xl:px-8 py-8 rounded-lg w-[90%]">
         <section className=" mb-8">
             <h2 className="text-4xl font-bold text-gray-900 pb-3 border-b-4 border-pink-500 w-min">{services.title}</h2>
             <p className="mt-2 text-xl text-gray-600">{services.description}</p>

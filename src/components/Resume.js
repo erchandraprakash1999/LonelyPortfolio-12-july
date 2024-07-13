@@ -7,7 +7,7 @@ export default function Resume() {
     }
   return (
     <>
-      <div className=" mx-auto bg-[linear-gradient(180deg,#f2f6f9,#fff)] p-8 rounded-lg shadow-lg text-[#5a656e] text-xl">
+      <div className=" mx-auto bg-[linear-gradient(180deg,#f2f6f9,#fff)] px-4 sm:px-8 py-8 rounded-lg shadow-lg text-[#5a656e] text-xl">
         <div className="w-[90%] mx-auto">
         <header className="mb-8">
             <h1 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 border-pink-500 w-min">{Resume.title}</h1>
