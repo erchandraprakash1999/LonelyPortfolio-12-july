@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link } from 'react-scroll'
 import { CgClose } from 'react-icons/cg';
 export default function Navigation() {
-        const [activeNav, setActiveNav] = React.useState(true);
+        const [activeNav, setActiveNav] = React.useState(false);
         const handleCloseNav =()=>{
                 setActiveNav(!activeNav);
         }
