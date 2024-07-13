@@ -20,7 +20,7 @@ function App() {
         ]
   return (
     <>
-    <section className=" flex flex-col items-center justify-center h-[75vh] text-white bg-[url(http://localhost:3000/image/hero-bg.jpg)]">
+    <section className={`flex flex-col items-center justify-center h-[75vh] text-white bg-[url(http://${window.location.host}/image/hero-bg.jpg)]`}>
     <p className='text-5xl font-bold '>Hi, I'm Alice!</p>
         <p className=" text-3xl">I am a graphic designer</p>
         <a href="#about" className='hover:text-pink-500 mt-2 relative top-0 hover:top-2 transition-[top] dura'><FaAngleDoubleDown  fontSize={70} /></a>
