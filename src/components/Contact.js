@@ -10,8 +10,8 @@ const ContactForm = () => {
           Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
         </p>
       </div>
-      <div className="flex">
-      <div className="flex flex-col justify-between mb-8 w-[60%]">
+      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col justify-between mb-8 w-full lg:w-[60%]">
         <div className="mb-4 md:mb-0">
         <div>
           <h3 className="text-2xl font-bold text-pink-500">LONELY</h3>
@@ -32,7 +32,7 @@ const ContactForm = () => {
         </div>
         </div>
       </div>
-      <form className="space-y-4 w-[40%]">
+      <form className="space-y-4 w-full lg:w-[40%]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input type="text" placeholder="Your Name" className="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500" />
           <input type="email" placeholder="Your Email" className="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500" />

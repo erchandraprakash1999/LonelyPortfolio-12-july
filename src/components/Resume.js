@@ -1,16 +1,20 @@
 import React from 'react'
 
 export default function Resume() {
+    const Resume = {
+        title:'Resume',
+        description:'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.',
+    }
   return (
     <>
       <div className=" mx-auto bg-[linear-gradient(180deg,#f2f6f9,#fff)] p-8 rounded-lg shadow-lg text-[#5a656e] text-xl">
         <div className="w-[90%] mx-auto">
         <header className="mb-8">
-            <h1 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 border-pink-500 w-min">Resume</h1>
-            <p className="mt-2 text-gray-600 text-xl">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <h1 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 border-pink-500 w-min">{Resume.title}</h1>
+            <p className="mt-2 text-gray-600 text-xl">{Resume.description}</p>
         </header>
-        <section className='flex gap-3'>
-        <div className="w-[50%]">
+        <section className='flex flex-col lg:flex-row gap-3'>
+        <div className="w-full g:w-[50%]">
         <div className="mb-6">
             <h2 className="text-3xl font-semibold text-[#4b7dab] mb-4">Summary</h2>
             <div className="  border-l-4 border-pink-500 pl-4 relative before:absolute before:top-0.5 before:content-[''] before:w-[16px] before:h-[16px]  before:rounded-full  before:left-[-10px]  before:bg-white  before:border-2  before:border-[#d43076]">
@@ -47,7 +51,7 @@ export default function Resume() {
         </div>
         
         
-        <div className='w-[50%]'>
+        <div className='w-full g:w-[50%]'>
             <h2 className="text-3xl font-semibold text-[#4b7dab] mb-4">Professional Experience</h2>
             <div className="border-l-4 border-pink-500 pl-4 relative before:absolute before:top-0.5 before:content-[''] before:w-[16px] before:h-[16px]  before:rounded-full  before:left-[-10px]  before:bg-white  before:border-2  before:border-[#d43076]">
                 <div className="pb-4">

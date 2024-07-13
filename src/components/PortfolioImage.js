@@ -1,19 +1,8 @@
 import React, { useState } from 'react'
 import { IoIosLink, IoMdAdd } from 'react-icons/io'
-
+import { filterImages } from '../data';
 export default function PortfolioImage() {
     const [active,setActive] = useState('all');
-    const Image = [
-        {name:"app",link:"image/app1.jpg"},
-        {name:"web",link:"image/web2.jpg"},
-        {name:"card",link:"image/card2.jpg"},
-        {name:"app",link:"image/app3.jpg"},
-        {name:"card",link:"image/card3.jpg"},
-        {name:"web",link:"image/web3.jpg"},
-        {name:"app",link:"image/app2.jpg"},
-        {name:"web",link:"image/web1.jpg"},
-        {name:"card",link:"image/card1.jpg"},
-    ]
 
     function handleTab(val){
         setActive(val);
@@ -21,10 +10,10 @@ export default function PortfolioImage() {
   return (
     <div>
       <section id="portfolio" className="portfolio section-bg bg-[linear-gradient(180deg,#f2f6f9,#fff)]">
-        <div className="container mx-auto p-8 rounded-lg shadow-lg">
+        <div className="container mx-auto p-5 sm:p-8  rounded-lg ">
             <div className=" mb-8">
-                <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 border-pink-500 w-min">Portfolio</h2>
-                <p className="mt-2 text-xl text-gray-600">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 border-pink-500 w-min">{filterImages.title}</h2>
+                <p className="mt-2 text-xl text-gray-600">{filterImages.description}</p>
             </div>
 
             <div className="flex justify-center mb-8 bg-white py-3 px-4 rounded-full w-min mx-auto">
@@ -38,7 +27,7 @@ export default function PortfolioImage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
 
-                {Image.filter((e)=>{return active==='all'?true:e.name===active}).map((item,index)=>{
+                {filterImages.images.filter((e)=>{return active==='all'?true:e.name===active}).map((item,index)=>{
                     return <div className=" bg-white  rounded-lg shadow-md " key={index}>
                     <div className="relative group">
                         <div className=''>
