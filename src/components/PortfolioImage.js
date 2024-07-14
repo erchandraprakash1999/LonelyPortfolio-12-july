@@ -12,11 +12,12 @@ export default function PortfolioImage({theme}) {
   return (
     <>
         <Element name='portfolio'> <div className="pb-16"></div> </Element>
-      <section id="portfolio" className="portfolio section-bg bg-[linear-gradient(180deg,#f2f6f9,#fff)]">
-        <div className="container mx-auto p-5 sm:p-8  rounded-lg ">
+      <section id="portfolio" className="portfolio section-bg bg-[linear-gradient(180deg,#f2f6f9,#fff)] font-ChakraPetch">
+        <div className="container mx-auto px-4 py-6">
             <div className=" mb-8">
-                <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 w-min" style={{borderColor:colors[theme][800]}}>{filterImages.title}</h2>
-                <p className="mt-2 text-xl text-gray-600">{filterImages.description}</p>
+                <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 w-min
+                 font-RobotoSlab" style={{borderColor:colors[theme][800]}}>{filterImages.title}</h2>
+                <p className="mt-2 text-xl text-gray-600 font-Poppins">{filterImages.description}</p>
             </div>
 
             <div className="flex justify-center mb-8 bg-white py-3 px-4 rounded-full w-min mx-auto ">

@@ -11,7 +11,7 @@ export default function Navigation({theme,handleTheme}) {
         }
   return (
     <>
-    <ul className={` list-none bg-white flex gap-6 flex-col absolute z-50 top-0 left-0 h-[76vh] justify-center items-center w-full  text-black ${activeNav?'block':'hidden'} `}>
+    <ul className={` list-none bg-white flex gap-6 flex-col absolute z-50 top-0 left-0 h-[76vh] justify-center items-center w-full  text-black ${activeNav?'block':'hidden'} font-Poppins `}>
                                 {navbar.navitem.map((item,i)=>{
                                 return <li className='hover:bg-gray-300 capitalize cursor-pointer font-bold'><Link to={item} smooth duration={100}>{item}</Link></li>
                                 })  }       
@@ -20,10 +20,10 @@ export default function Navigation({theme,handleTheme}) {
       <header className='sticky top-0  z-30  text-white' style={{backgroundColor:colors[theme][400]}}>
         <nav className=' h-[70px] shadow-lg  '>
                 <div className="flex justify-between items-center w-[85%] h-full mx-auto ">
-                <div className=" uppercase text-4xl font-semibold">
+                <div className=" uppercase text-4xl font-semibold font-RobotoSlab">
                         {navbar.name}
                 </div>
-                <div className='h-min font-sans hidden lg:block'>
+                <div className='h-min font-sans hidden lg:block font-Poppins'>
                         <ul className=' list-none flex items-center gap-6  '>
                                 {navbar.navitem.map((item,i)=>{
                                 return <li className=' capitalize cursor-pointer font-bold h-min'><Link to={item} className='' smooth duration={100}>{item}</Link></li>

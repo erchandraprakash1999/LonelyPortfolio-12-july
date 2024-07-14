@@ -14,7 +14,7 @@ export const headerSection ={
 
 export const navbar = {
   name: "Lonely",
-  navitem: ["home","about", "resume", "services", "portfolio",'testimonials', "contact"]
+  navitem: ["about","skills","resume", "services", "portfolio",'testimonials', "contact"]
 }
 export const about = {
   image:"./image/girlCall.jpg",

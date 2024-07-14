@@ -1,37 +1,60 @@
 import React from 'react';
+import { FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaSquareInstagram, FaTwitter } from 'react-icons/fa6';
+import { IoMailOutline } from 'react-icons/io5';
+import { LuMapPin } from 'react-icons/lu';
+import { MdOutlinePhoneIphone } from 'react-icons/md';
 import { Element } from 'react-scroll';
 import colors from 'tailwindcss/colors';
 
 const ContactForm = ({theme}) => {
+  const contact = {
+    title:"Contact",
+    description:"Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.",
+    webName:"LONELY",
+    webDescription:"Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.",
+    socialLinks:{
+      twitterURL:"",
+      facebookURL:"",
+      instagramURL:"",
+      linkedInURL:"",
+    },
+    ContactDetails:{
+      Address:"A108 Adam Street, New York, NY 535022",
+      phoneNumber:"+1 5589 55488 55",
+      Gmail:"info@example.com"
+    }
+  }
   return (
-        <div className='bg-[linear-gradient(180deg,#f2f6f9,#fff)] text-lg'>
+        <div className='bg-[linear-gradient(180deg,#f2f6f9,#fff)] text-lg font-ChakraPetch'>
         <Element name='contact'> <div className="pb-16"></div> </Element>
     <div className="container mx-auto px-4 py-6  ">
       <div className="mb-8">
-        <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4  w-min" style={{borderColor:colors[theme][800]}}>Contact</h2>
-        <p className="mt-6 text-xl text-gray-600">
-          Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
+        <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4  w-min font-RobotoSlab" style={{borderColor:colors[theme][800]}}>{contact.title}</h2>
+        <p className="mt-6 text-xl text-gray-600 font-Poppins">
+          {contact.description}
         </p>
       </div>
       <div className="flex flex-col lg:flex-row">
       <div className="flex flex-col justify-between mb-8 w-full lg:w-[60%]">
         <div className="mb-4 md:mb-0">
         <div>
-          <h3 className="text-2xl font-bold " style={{color:colors[theme][600]}}>LONELY</h3>
+          <h3 className="text-2xl font-bold uppercase " style={{color:colors[theme][600]}}>{contact.webName}</h3>
           <p className="mt-2 text-gray-600">
-            Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.
+          {contact.webDescription}
           </p>
-          {/* <div className="flex space-x-4 mt-4">
-            <a href="#" className="text-pink-500"><i className="fab fa-twitter"></i></a>
-            <a href="#" className="text-pink-500"><i className="fab fa-facebook"></i></a>
-            <a href="#" className="text-pink-500"><i className="fab fa-instagram"></i></a>
-            <a href="#" className="text-pink-500"><i className="fab fa-linkedin"></i></a>
-          </div> */}
+          <div className="flex space-x-4 mt-4">
+            <a href={contact.socialLinks.twitterURL} className="p-2 rounded-full " style={{border:`2px solid ${colors[theme][500]}`}}><FaTwitter style={{color:colors[theme][500]}} fontSize={30}></FaTwitter></a>
+            <a href={contact.socialLinks.facebookURL} className="p-2 rounded-full " style={{border:`2px solid ${colors[theme][500]}`}}><FaFacebook style={{color:colors[theme][500]}} fontSize={30}></FaFacebook></a>
+            <a href={contact.socialLinks.instagramURL} className="p-2 rounded-full " style={{border:`2px solid ${colors[theme][500]}`}}><FaSquareInstagram style={{color:colors[theme][500]}} fontSize={30}></FaSquareInstagram></a>
+            <a href={contact.socialLinks.linkedInURL} className="p-2 rounded-full " style={{border:`2px solid ${colors[theme][500]}`}}><FaLinkedin style={{color:colors[theme][500]}} fontSize={30}></FaLinkedin></a>
+
           </div>
-        <div className="space-y-4 text-gray-600">
-          <p><i className="fas fa-map-marker-alt  mr-2" style={{color:colors[theme][500]}}></i>A108 Adam Street, New York, NY 535022</p>
-          <p><i className="fas fa-envelope  mr-2" style={{color:colors[theme][500]}}></i>info@example.com</p>
-          <p><i className="fas fa-phone  mr-2" style={{color:colors[theme][500]}}></i>+1 5589 55488 55s</p>
+          </div>
+        <div className="space-y-4 my-5 text-gray-600">
+          <p  className='flex items-center' ><LuMapPin fontSize={40} className=" mr-2" style={{color:colors[theme][500]}}></LuMapPin> <span>{contact.ContactDetails.Address}</span></p>
+          <a href={`mailto:${contact.ContactDetails.Gmail}`} className='flex items-center'><IoMailOutline   fontSize={40} className=" mr-2" style={{color:colors[theme][500]}}></IoMailOutline><span>{contact.ContactDetails.Gmail}</span></a>
+          <a href={`tel:${contact.ContactDetails.phoneNumber}`} style={{color:colors[theme][500]}} className='flex items-center'><MdOutlinePhoneIphone  fontSize={40} className="fas fa-phone  mr-2" ></MdOutlinePhoneIphone><span>{contact.ContactDetails.phoneNumber}</span></a>
         </div>
         </div>
       </div>
@@ -46,8 +69,8 @@ const ContactForm = ({theme}) => {
       </form>
       </div>
       <footer className="mt-16 text-center text-gray-600">
-        <p>&copy; Copyright <span className="text-pink-500">Lonely</span>. All Rights Reserved</p>
-        <p>Designed by <a href="https://bootstrapmade.com" className="text-pink-500">BootstrapMade</a></p>
+        <p>&copy; Copyright <span style={{color:colors[theme][500]}}>Lonely</span>. All Rights Reserved</p>
+        <p>Designed by <a href="https://devanti.com" style={{color:colors[theme][500]}}>Devanti Technologies Pvt.Ltd</a></p>
       </footer>
     </div>
     </div>

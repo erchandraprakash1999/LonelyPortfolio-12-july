@@ -7,10 +7,10 @@ export default function Skills({theme}) {
   return (
     <>
     <Element name='skills'> <div className="pb-16"></div> </Element>
-      <div className=" mx-auto px-5 sm:px-8  py-9 bg-[linear-gradient(#e5e7eb,white)]">
-        <div className="w-[90%] mx-auto">
+      <div className=" mx-auto  bg-[linear-gradient(#e5e7eb,white)] font-ChakraPetch">
+        <div className="container mx-auto px-4 py-6">
         <div className="">
-            <h2 className="text-4xl font-bold text-gray-900 pb-3 border-b-4 w-min" style={{borderColor:colors[theme][800]}}>{skills.title}</h2>
+            <h2 className="text-4xl font-bold text-gray-900 pb-3 border-b-4 w-min font-RobotoSlab" style={{borderColor:colors[theme][800]}}>{skills.title}</h2>
             <p className="text-gray-600 mt-4 text-xl">{skills.description}</p>
         </div>
         <div className=" grid grid-cols-1 md:grid-cols-2 gap-6">
