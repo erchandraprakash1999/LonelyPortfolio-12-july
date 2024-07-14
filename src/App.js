@@ -10,7 +10,6 @@ import HeaderImageSection from './components/headerImageSection';
 import Skills from './components/Skills';
 import Navigation from './components/Navigation';
 import About from './components/About';
-import { Element } from 'react-scroll';
 function App() {
   const [theme,setTheme] = useState('pink');
   const handleTheme = (e)=>{
@@ -18,8 +17,6 @@ function App() {
   }
   return (
     <div className='relative'>
-    <Element name="home" >
-    </Element>
     <HeaderImageSection theme={theme}/>
 
  <Navigation theme={theme} handleTheme={handleTheme} />
