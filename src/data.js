@@ -4,6 +4,8 @@ import { FaEarthAmericas } from 'react-icons/fa6'
 import { GrNotes } from 'react-icons/gr'
 import { IoBasketballOutline } from 'react-icons/io5'
 import { MdSpeed } from 'react-icons/md'
+import { IoMdTime } from 'react-icons/io';
+import { BsAward } from 'react-icons/bs';
 export const headerSection ={
   image: "/image/hero-bg.jpg",
   title: "Hi, I'm Alice!",
@@ -21,8 +23,8 @@ export const about = {
   subItem:[
           {strong:'Happy Clients',icons:<CiFaceSmile fontSize={55}/>,value:65,text:'consequuntur voluptas nostrum aliquid ipsam architecto ut.'},
           {strong:'Projects',icons:<CgNotes fontSize={55}/>,value:85,text:'adipisci atque cum quia aspernatur totam laudantium et quia dere tan'},
-          {strong:'Years of experience',icons:<CiFaceSmile fontSize={55}/>,value:12,text:' aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel'},
-          {strong:'Awards',icons:<CgNotes fontSize={55}/>,value:15,text:' rerum asperiores dolor alias quo reprehenderit eum et nemo pad der'},
+          {strong:'Years of experience',icons:<IoMdTime fontSize={55}/>,value:12,text:' aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel'},
+          {strong:'Awards',icons:<BsAward fontSize={55}/>,value:15,text:' rerum asperiores dolor alias quo reprehenderit eum et nemo pad der'},
   ],
 }
 export const  skills = {

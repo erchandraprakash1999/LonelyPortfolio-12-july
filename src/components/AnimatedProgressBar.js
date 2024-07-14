@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import colors from 'tailwindcss/colors';
 
-export default function AnimatedProgressBar({k,val}) {
+export default function AnimatedProgressBar({k,val,theme}) {
         const [progress,setProgress] = useState(0);
         useEffect(()=>{
                 const interval = setInterval(()=>{
@@ -14,8 +15,8 @@ export default function AnimatedProgressBar({k,val}) {
                     <span className="text-gray-600 uppercase">{k}</span>
                     <span className="text-gray-600">{progress}%</span>
         </div>
-      <div className="w-full bg-pink-200 rounded-full h-1.5">
-                    <div className="bg-pink-500 h-1.5 rounded-full transition-[width] duration-500" style={{width:`${progress}%`}}></div>
+      <div className="w-full bg-pink-200 rounded-full h-1.5" style={{backgroundColor:colors[theme][200]}}>
+                    <div className=" h-1.5 rounded-full transition-[width] duration-500" style={{width:`${progress}%`,backgroundColor:colors[theme][500]}}></div>
                 </div>
     </div>
   )

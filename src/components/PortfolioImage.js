@@ -1,27 +1,30 @@
 import React, { useState } from 'react'
 import { IoIosLink, IoMdAdd } from 'react-icons/io'
 import { filterImages } from '../data';
-export default function PortfolioImage() {
+import colors from 'tailwindcss/colors';
+import { Element } from 'react-scroll';
+export default function PortfolioImage({theme}) {
     const [active,setActive] = useState('all');
 
     function handleTab(val){
         setActive(val);
     }
   return (
-    <div>
+    <>
+        <Element name='portfolio'> <div className="pb-16"></div> </Element>
       <section id="portfolio" className="portfolio section-bg bg-[linear-gradient(180deg,#f2f6f9,#fff)]">
         <div className="container mx-auto p-5 sm:p-8  rounded-lg ">
             <div className=" mb-8">
-                <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 border-pink-500 w-min">{filterImages.title}</h2>
+                <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 w-min" style={{borderColor:colors[theme][800]}}>{filterImages.title}</h2>
                 <p className="mt-2 text-xl text-gray-600">{filterImages.description}</p>
             </div>
 
-            <div className="flex justify-center mb-8 bg-white py-3 px-4 rounded-full w-min mx-auto">
-                <ul id="portfolio-filters" className="flex gap-6">
-                    <li className={`${active==='all'?'text-pink-700':''} cursor-pointer`} onClick={()=>handleTab('all')}>All</li>
-                    <li className={`${active==='app'?'text-pink-700':''} cursor-pointer`} onClick={()=>handleTab('app')}>App</li>
-                    <li className={`${active==='card'?'text-pink-700':''} cursor-pointer`} onClick={()=>handleTab('card')}>Card</li>
-                    <li className={`${active==='web'?'text-pink-700':''} cursor-pointer`} onClick={()=>handleTab('web')}>Web</li>
+            <div className="flex justify-center mb-8 bg-white py-3 px-4 rounded-full w-min mx-auto ">
+                <ul id="portfolio-filters" className="flex gap-6 cursor-pointer">
+                    <li  style={{color:active==='all'?colors[theme][500]:''}} onClick={()=>handleTab('all')}>All</li>
+                    <li style={{color:active==='app'?colors[theme][500]:''}} onClick={()=>handleTab('app')}>App</li>
+                    <li style={{color:active==='card'?colors[theme][500]:''}} onClick={()=>handleTab('card')}>Card</li>
+                    <li style={{color:active==='web'?colors[theme][500]:''}} onClick={()=>handleTab('web')}>Web</li>
                 </ul>
             </div>
 
@@ -51,6 +54,6 @@ export default function PortfolioImage() {
             </div>
         </div>
     </section>
-    </div>
+    </>
   )
 }

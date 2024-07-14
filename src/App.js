@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './portfolio.css'
 
 import Resume from './components/Resume';
@@ -12,20 +12,24 @@ import Navigation from './components/Navigation';
 import About from './components/About';
 import { Element } from 'react-scroll';
 function App() {
+  const [theme,setTheme] = useState('pink');
+  const handleTheme = (e)=>{
+    setTheme(e.target.value);
+  }
   return (
     <div className='relative'>
-    <Element name='home'>
-    <HeaderImageSection />
+    <Element name="home" >
     </Element>
+    <HeaderImageSection theme={theme}/>
 
- <Navigation />
-    <Element name="about"><About /></Element>
-    <Element name="skills"><Skills /></Element>
-    <Element name="resume"><Resume/></Element>
-    <Element name="services"><Services/></Element>
-    <Element name="portfolio"><PortfolioImage/></Element>
-    <Element name="testimonials"><Testimonials/></Element>
-    <Element name="contact"><ContactForm/></Element>
+ <Navigation theme={theme} handleTheme={handleTheme} />
+   <About theme={theme} />
+   <Skills theme={theme}/>
+    <Resume theme={theme}/>
+    <Services theme={theme}/>
+   <PortfolioImage theme={theme}/>
+    <Testimonials theme={theme}/>
+    <ContactForm theme={theme}/>
     </div>
   )
 }

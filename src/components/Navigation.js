@@ -3,7 +3,9 @@ import { navbar } from '../data'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link } from 'react-scroll'
 import { CgClose } from 'react-icons/cg';
-export default function Navigation() {
+import colors from 'tailwindcss/colors';
+import ThemeSetter from './ThemeSetter';
+export default function Navigation({theme,handleTheme}) {
         const [activeNav, setActiveNav] = React.useState(false);
         const handleCloseNav =()=>{
                 setActiveNav(!activeNav);
@@ -14,19 +16,21 @@ export default function Navigation() {
         <button onClick={handleCloseNav}  className=' float-right'><CgClose fontSize={30}/></button>
                                 {navbar.navitem.map((item,i)=>{
                                 return <li className='hover:bg-gray-300 capitalize cursor-pointer font-bold'><Link to={item} smooth duration={100}>{item}</Link></li>
-                                })  }                              
+                                })  }       
+                                <ThemeSetter handleTheme={handleTheme}/>                          
         </ul>
-      <header className='sticky top-0  z-30 bg-pink-500 text-white'>
+      <header className='sticky top-0  z-30  text-white' style={{backgroundColor:colors[theme][400]}}>
         <nav className=' h-[70px] shadow-lg  '>
                 <div className="flex justify-between items-center w-[85%] h-full mx-auto ">
                 <div className=" uppercase text-4xl font-semibold">
                         {navbar.name}
                 </div>
                 <div className='h-min font-sans hidden lg:block'>
-                        <ul className=' list-none flex gap-6 '>
+                        <ul className=' list-none flex items-center gap-6  '>
                                 {navbar.navitem.map((item,i)=>{
-                                return <li className=' capitalize cursor-pointer font-bold'><Link to={item} smooth duration={100}>{item}</Link></li>
-                                })  }                              
+                                return <li className=' capitalize cursor-pointer font-bold h-min'><Link to={item} className='' smooth duration={100}>{item}</Link></li>
+                                })  }         
+                                <ThemeSetter handleTheme={handleTheme}/>             
                         </ul>
                         
                 </div>

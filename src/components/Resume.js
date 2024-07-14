@@ -1,23 +1,26 @@
 import React from 'react'
+import { Element } from 'react-scroll';
+import colors from 'tailwindcss/colors';
 
-export default function Resume() {
+export default function Resume({theme}) {
     const Resume = {
         title:'Resume',
         description:'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.',
     }
   return (
     <>
+    <Element name='resume'> <div className="pb-16"></div> </Element>
       <div className=" mx-auto bg-[linear-gradient(180deg,#f2f6f9,#fff)] px-4 sm:px-8 py-8 rounded-lg shadow-lg text-[#5a656e] text-xl">
         <div className="w-[90%] mx-auto">
         <header className="mb-8">
-            <h1 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 border-pink-500 w-min">{Resume.title}</h1>
+            <h1 className="text-4xl font-bold text-[#345676] pb-3 border-b-4  w-min" style={{borderColor:colors[theme][800]}}>{Resume.title}</h1>
             <p className="mt-2 text-gray-600 text-xl">{Resume.description}</p>
         </header>
         <section className='flex flex-col lg:flex-row gap-3'>
         <div className="w-full g:w-[50%]">
         <div className="mb-6">
             <h2 className="text-3xl font-semibold text-[#4b7dab] mb-4">Summary</h2>
-            <div className="  border-l-4 border-pink-500 pl-4 relative before:absolute before:top-0.5 before:content-[''] before:w-[16px] before:h-[16px]  before:rounded-full  before:left-[-10px]  before:bg-white  before:border-2  before:border-[#d43076]">
+            <div className="  border-l-4  pl-4 relative before:absolute before:top-0.5 before:content-[''] before:w-[16px] before:h-[16px]  before:rounded-full  before:left-[-10px]  before:bg-white  before:border-4  before:border-black" style={{borderColor:colors[theme][800]}}>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 ">Alice Barkley</h3>
                 <p className="text-gray-700 mb-4 italic ">Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</p>
                 <ul className="text-gray-700 flex flex-col gap-2">
@@ -30,7 +33,7 @@ export default function Resume() {
         
         <div className="mb-6">
             <h2 className="text-3xl font-semibold text-[#4b7dab] mb-4 ">Education</h2>
-            <div className="border-l-4 border-pink-500 pl-4 pb-4 relative before:absolute before:top-0.5 before:content-[''] before:w-[16px] before:h-[16px]  before:rounded-full  before:left-[-10px]  before:bg-white  before:border-2  before:border-[#d43076]">
+            <div className="border-l-4  pl-4 pb-4 relative before:absolute before:top-0.5 before:content-[''] before:w-[16px] before:h-[16px]  before:rounded-full  before:left-[-10px]  before:bg-white  before:border-4  before:border-black" style={{borderColor:colors[theme][800]}}>
                 <div className="space-y-4">
                     <h3 className="text-xl font-bold text-[#2c4964] mb-3">Master of Fine Arts & Graphic Design</h3>
                     <span className="text-gray-600 p-2 bg-[#e4ebf3] px-4 py-2 ">2015 - 2016</span>
@@ -39,7 +42,7 @@ export default function Resume() {
                 </div>
                 
             </div>
-            <div className="border-l-4 border-pink-500 pl-4 relative before:absolute before:top-1 before:content-[''] before:w-[16px] before:h-[16px]  before:rounded-full  before:left-[-10px]  before:bg-white  before:border-2  before:border-[#d43076]">
+            <div className="border-l-4  pl-4 relative before:absolute before:top-1 before:content-[''] before:w-[16px] before:h-[16px]  before:rounded-full  before:left-[-10px]  before:bg-white  before:border-2  before:border-black" style={{borderColor:colors[theme][800]}}>
             <div className='space-y-4'>
                     <h3 className="text-xl font-bold text-[#2c4964] mb-3">Bachelor of Fine Arts & Graphic Design</h3>
                     <span className="text-gray-600 bg-[#e4ebf3] px-4 py-2">2010 - 2014</span>
@@ -53,7 +56,7 @@ export default function Resume() {
         
         <div className='w-full g:w-[50%]'>
             <h2 className="text-3xl font-semibold text-[#4b7dab] mb-4">Professional Experience</h2>
-            <div className="border-l-4 border-pink-500 pl-4 relative before:absolute before:top-0.5 before:content-[''] before:w-[16px] before:h-[16px]  before:rounded-full  before:left-[-10px]  before:bg-white  before:border-2  before:border-[#d43076]">
+            <div className="border-l-4  pl-4 relative before:absolute before:top-0.5 before:content-[''] before:w-[16px] before:h-[16px]  before:rounded-full  before:left-[-10px]  before:bg-white  before:border-4  before:border-black" style={{borderColor:colors[theme][800]}}>
                 <div className="pb-4">
                     <h3 className="text-xl font-bold text-[#2c4964] mb-4">Senior Graphic Design Specialist</h3>
                     <span className="text-gray-600 bg-[#e4ebf3] px-4 py-2">2019 - Present</span>
@@ -66,7 +69,7 @@ export default function Resume() {
                     </ul>
                 </div>
             </div>
-                <div className="border-l-4 border-pink-500 pl-4 relative  before:absolute before:top-1  before:content-[''] before:w-[16px] before:h-[16px]  before:rounded-full  before:left-[-10px]  before:bg-white  before:border-2  before:border-[#d43076] pb-4">
+                <div className="border-l-4  pl-4 relative  before:absolute before:top-1  before:content-[''] before:w-[16px] before:h-[16px]  before:rounded-full  before:left-[-10px]  before:bg-white  before:border-2  before:border-black pb-4" style={{borderColor:colors[theme][800]}}>
                     <h3 className="text-xl font-bold text-[#2c4964] mb-4">Graphic Design Specialist</h3>
                     <span className="text-gray-600 bg-[#e4ebf3] px-4 py-2 ">2017 - 2018</span>
                     <p className="text-gray-700 mt-2">Stepping Stone Advertising, New York, NY</p>
