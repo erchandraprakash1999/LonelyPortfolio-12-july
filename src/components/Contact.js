@@ -6,25 +6,8 @@ import { LuMapPin } from 'react-icons/lu';
 import { MdOutlinePhoneIphone } from 'react-icons/md';
 import { Element } from 'react-scroll';
 import colors from 'tailwindcss/colors';
-
+import { contact } from '../data';
 const ContactForm = ({theme}) => {
-  const contact = {
-    title:"Contact",
-    description:"Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.",
-    webName:"LONELY",
-    webDescription:"Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.",
-    socialLinks:{
-      twitterURL:"",
-      facebookURL:"",
-      instagramURL:"",
-      linkedInURL:"",
-    },
-    ContactDetails:{
-      Address:"A108 Adam Street, New York, NY 535022",
-      phoneNumber:"+1 5589 55488 55",
-      Gmail:"info@example.com"
-    }
-  }
   return (
         <div className='bg-[linear-gradient(180deg,#f2f6f9,#fff)] text-lg font-ChakraPetch'>
         <Element name='contact'> <div className="pb-16"></div> </Element>

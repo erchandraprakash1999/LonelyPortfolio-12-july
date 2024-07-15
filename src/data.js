@@ -39,7 +39,47 @@ export const  skills = {
     { key: "Photoshop", value: 55 }
   ]
 }
-
+export const resume = {
+  title:'Resume',
+  description:'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.',
+  Summary:{
+      heading:"Summary",
+      candidateName:"Alice Barkley",
+      SummaryContent:"Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.",
+      Address:"Portland par 127, Orlando, FL",
+      phoneNumber:"(123) 456-7891",
+      emailAddress:"",
+  },
+  Education:{
+      heading:"Education",
+      flowChart:[
+          {
+              courseName:"Master in Electronics",
+              Batch:"2015 - 2016",
+              courseContent:["Rochester Institute of Technology, Rochester, NY","Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend"],
+          },
+          {
+              courseName:"Bachelor of Fine Arts & Graphic Design",
+              Batch:"2010 - 2014",
+              courseContent:["Delhi Institute of Technology, Rochester, NY","Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila"],
+          },
+      ]},
+  Experience:{heading:"Professional Experience",
+      flowChart:[
+      {
+          JobRole:"Senior Graphic Design Specialist",
+          duration:"2019 - Present",
+          location:"Experion, New York, NY",
+          courseContent:["Lead in the design, development, and implementation of the graphic, layout, and production communication materials","Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project.","Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design","Oversee the efficient use of production project budgets ranging from $2,000 - $25,000"]
+          },
+      {
+          JobRole:"Graphic Design Specialist",
+          duration:"2017 - 2018",
+          location:"Stepping Stone Advertising, New York, NY",
+          courseContent:["Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements","Managed up to 5 projects or tasks at a given time while under pressure","Recommended and consulted with clients on the most appropriate graphic design","Created 4+ design presentations and proposals a month for clients and account managers"]
+      },
+  ]}
+}
 export const  services = {
   title:'Services',
   description:'Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.',
@@ -75,4 +115,21 @@ export const filterImages =
   {name:"app",link:"image/app2.jpg"},
   {name:"web",link:"image/web1.jpg"},
   {name:"card",link:"image/card1.jpg"},
-]}
+]} 
+export const contact = {
+  title:"Contact",
+  description:"Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.",
+  webName:"LONELY",
+  webDescription:"Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.",
+  socialLinks:{
+    twitterURL:"",
+    facebookURL:"",
+    instagramURL:"",
+    linkedInURL:"",
+  },
+  ContactDetails:{
+    Address:"A108 Adam Street, New York, NY 535022",
+    phoneNumber:"+1 5589 55488 55",
+    Gmail:"info@example.com"
+  }
+}
