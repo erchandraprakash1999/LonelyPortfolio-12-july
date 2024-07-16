@@ -7,8 +7,7 @@ import { MdOutlinePhoneIphone } from 'react-icons/md';
 import { Element } from 'react-scroll';
 import colors from 'tailwindcss/colors';
 import { contact } from '../data';
-import PortFolioActions from '../RequestServices/PortFolioActions';
-import { useDispatch, useSelector } from 'react-redux';
+import {useSelector } from 'react-redux';
 const ContactForm = ({theme}) => {
   const {portfolio} = useSelector((store)=>store)
   const data = portfolio.user?.data;
