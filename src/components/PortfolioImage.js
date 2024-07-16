@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoIosLink, IoMdAdd } from 'react-icons/io'
 import { filterImages } from '../data';
 import colors from 'tailwindcss/colors';
 import { Element } from 'react-scroll';
+import PortFolioActions from '../RequestServices/PortFolioActions';
+import { useDispatch, useSelector } from 'react-redux';
 export default function PortfolioImage({theme}) {
     const [active,setActive] = useState('all');
-
+    const {portfolio} = useSelector((store)=>store)
+    const data = portfolio.portfolioImages?.data;
+    const dispatch = useDispatch();
+    useEffect(()=>{
+      dispatch(PortFolioActions.portfolioapi())
+    },[])
     function handleTab(val){
         setActive(val);
     }
@@ -16,8 +23,8 @@ export default function PortfolioImage({theme}) {
         <div className="container mx-auto px-4 py-6">
             <div className=" mb-8">
                 <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 w-min
-                 font-RobotoSlab" style={{borderColor:colors[theme][800]}}>{filterImages.title}</h2>
-                <p className="mt-2 text-xl text-gray-600 font-Poppins">{filterImages.description}</p>
+                 font-RobotoSlab" style={{borderColor:colors[theme][800]}}>{data?.title}</h2>
+                <p className="mt-2 text-xl text-gray-600 font-Poppins">{data?.description}</p>
             </div>
 
             <div className="flex justify-center mb-8 bg-white py-3 px-4 rounded-full w-min mx-auto ">
@@ -31,7 +38,7 @@ export default function PortfolioImage({theme}) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
 
-                {filterImages.images.filter((e)=>{return active==='all'?true:e.name===active}).map((item,index)=>{
+                {data?.items.filter((e)=>{return active==='all'?true:e.name===active}).map((item,index)=>{
                     return <div className=" bg-white  rounded-lg shadow-md " key={index}>
                     <div className="relative group">
                         <div className=''>

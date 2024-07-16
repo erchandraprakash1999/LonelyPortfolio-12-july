@@ -10,8 +10,8 @@ export default function ServiceItem({item,theme}) {
                            {item.icon}
                         </div>
                     </div>
-                    <h3 className=" mb-5 text-2xl font-semibold text-gray-900  group-hover:text-white">{item.itemhead}</h3>
-                    <p className="mt-2 text-gray-600 group-hover:text-slate-100">{item.itemtext}</p>
+                    <h3 className=" mb-5 text-2xl font-semibold text-gray-900  group-hover:text-white">{item.name}</h3>
+                    <p className="mt-2 text-gray-600 group-hover:text-slate-100">{item.description}</p>
                 </div>
     </>
   )

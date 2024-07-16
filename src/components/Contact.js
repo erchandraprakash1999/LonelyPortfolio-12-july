@@ -7,24 +7,28 @@ import { MdOutlinePhoneIphone } from 'react-icons/md';
 import { Element } from 'react-scroll';
 import colors from 'tailwindcss/colors';
 import { contact } from '../data';
+import PortFolioActions from '../RequestServices/PortFolioActions';
+import { useDispatch, useSelector } from 'react-redux';
 const ContactForm = ({theme}) => {
+  const {portfolio} = useSelector((store)=>store)
+  const data = portfolio.user?.data;
   return (
         <div className='bg-[linear-gradient(180deg,#f2f6f9,#fff)] text-lg font-ChakraPetch'>
         <Element name='contact'> <div className="pb-16"></div> </Element>
     <div className="container mx-auto px-4 py-6  ">
       <div className="mb-8">
-        <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4  w-min font-RobotoSlab" style={{borderColor:colors[theme][800]}}>{contact.title}</h2>
+        <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4  w-min font-RobotoSlab whitespace-nowrap" style={{borderColor:colors[theme][800]}}>{data?.contact_title}</h2>
         <p className="mt-6 text-xl text-gray-600 font-Poppins">
-          {contact.description}
+          {data?.contact_description}
         </p>
       </div>
       <div className="flex flex-col lg:flex-row">
       <div className="flex flex-col justify-between mb-8 w-full lg:w-[60%]">
         <div className="mb-4 md:mb-0">
         <div>
-          <h3 className="text-2xl font-bold uppercase " style={{color:colors[theme][600]}}>{contact.webName}</h3>
+          <h3 className="text-2xl font-bold uppercase " style={{color:colors[theme][600]}}>{data?.app_name}</h3>
           <p className="mt-2 text-gray-600">
-          {contact.webDescription}
+          {data?.header_description}
           </p>
           <div className="flex space-x-4 mt-4">
             <a href={contact.socialLinks.twitterURL} className="p-2 rounded-full " style={{border:`2px solid ${colors[theme][500]}`}}><FaTwitter style={{color:colors[theme][500]}} fontSize={30}></FaTwitter></a>
@@ -35,9 +39,9 @@ const ContactForm = ({theme}) => {
           </div>
           </div>
         <div className="space-y-4 my-5 text-gray-600">
-          <p  className='flex items-center' ><LuMapPin fontSize={40} className=" mr-2" style={{color:colors[theme][500]}}></LuMapPin> <span>{contact.ContactDetails.Address}</span></p>
-          <a href={`mailto:${contact.ContactDetails.Gmail}`} className='flex items-center'><IoMailOutline   fontSize={40} className=" mr-2" style={{color:colors[theme][500]}}></IoMailOutline><span>{contact.ContactDetails.Gmail}</span></a>
-          <a href={`tel:${contact.ContactDetails.phoneNumber}`} style={{color:colors[theme][500]}} className='flex items-center'><MdOutlinePhoneIphone  fontSize={40} className="fas fa-phone  mr-2" ></MdOutlinePhoneIphone><span>{contact.ContactDetails.phoneNumber}</span></a>
+          <p  className='flex items-center' ><LuMapPin fontSize={40} className=" mr-2" style={{color:colors[theme][500]}}></LuMapPin> <span>{data?.address}</span></p>
+          <a href={`mailto:${data?.email1}`} className='flex items-center'><IoMailOutline   fontSize={40} className=" mr-2" style={{color:colors[theme][500]}}></IoMailOutline><span>{data?.email1}</span></a>
+          <a href={`tel:${data?.number1}`} style={{color:colors[theme][500]}} className='flex items-center'><MdOutlinePhoneIphone  fontSize={40} className="fas fa-phone  mr-2" ></MdOutlinePhoneIphone><span>{data?.number1}</span></a>
         </div>
         </div>
       </div>
@@ -52,7 +56,8 @@ const ContactForm = ({theme}) => {
       </form>
       </div>
       <footer className="mt-16 text-center text-gray-600">
-        <p>&copy; Copyright <span style={{color:colors[theme][500]}}>Lonely</span>. All Rights Reserved</p>
+        {/* <p>&copy; Copyright <span style={{color:colors[theme][500]}}>Lonely</span>. All Rights Reserved</p> */}
+        <p>{data?.copyright_description}</p>
         <p>Designed by <a href="https://devanti.com" style={{color:colors[theme][500]}}>Devanti Technologies Pvt.Ltd</a></p>
       </footer>
     </div>
