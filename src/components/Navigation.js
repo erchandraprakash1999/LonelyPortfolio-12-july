@@ -4,11 +4,14 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link } from 'react-scroll'
 import colors from 'tailwindcss/colors';
 import ThemeSetter from './ThemeSetter';
+import { useSelector } from 'react-redux';
 export default function Navigation({theme,handleTheme}) {
         const [activeNav, setActiveNav] = React.useState(false);
         const handleToggleNav =()=>{
                 setActiveNav(!activeNav);
         }
+        const {portfolio} = useSelector((store)=>store)
+  const data = portfolio.user?.data;
   return (
     <>
     <ul className={` list-none bg-white flex gap-6 flex-col absolute z-50 top-0 left-0 h-[76vh] justify-center items-center w-full  text-black ${activeNav?'block':'hidden'} font-Poppins `}>
@@ -21,7 +24,7 @@ export default function Navigation({theme,handleTheme}) {
         <nav className=' h-[70px] shadow-lg  '>
                 <div className="flex justify-between items-center w-[85%] h-full mx-auto ">
                 <div className=" uppercase text-4xl font-semibold font-RobotoSlab">
-                        {navbar.name}
+                        {data?.app_name}
                 </div>
                 <div className='h-min font-sans hidden lg:block font-Poppins'>
                         <ul className=' list-none flex items-center gap-6  '>
