@@ -22,7 +22,7 @@ export default function About({theme}) {
         </div>
         <div className="w-full lg:w-[60%] ">
             <h1 className= " text-3xl md:text-5xl font-semibold mb-4 font-RobotoSlab " style={{color:colors[theme][700]}}>{data?.title}</h1>
-            <p className="text-gray-600 mb-8 text-lg">{data?.description}</p>
+            <p className="text-gray-600 mb-8 text-lg" dangerouslySetInnerHTML={{__html:data?.description}}></p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {data?.items.map((item,index)=>{
                         return <div className='flex' key={index}>
