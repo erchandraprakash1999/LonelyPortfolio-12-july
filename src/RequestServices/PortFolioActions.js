@@ -1,16 +1,16 @@
 import {
-        generalRequest,generalFailure,generalSuccess,
-        aboutRequest,aboutFailure,aboutSuccess,
-        skillRequest,skillFailure,skillSuccess,
-        resumeRequest,resumeFailure,resumeSuccess,
-        serviceRequest,serviceFailure,serviceSuccess,
-        portfolioRequest,portfolioFailure,portfolioSuccess,
-        testimonialsRequest,testimonialsFailure,testimonialsSuccess,
+        generalRequest, generalFailure, generalSuccess,
+        aboutRequest, aboutFailure, aboutSuccess,
+        skillRequest, skillFailure, skillSuccess,
+        resumeRequest, resumeFailure, resumeSuccess,
+        serviceRequest, serviceFailure, serviceSuccess,
+        portfolioRequest, portfolioFailure, portfolioSuccess,
+        testimonialsRequest, testimonialsFailure, testimonialsSuccess,
 } from "../app/slices/PortFolioSlice"
 import api from "./baseApi"
 // const Register=(formdata)=>api.post('/auth/signup',formdata)
 // const Login=(formdata)=>api.post('/auth/signin',formdata)
-const generalapi=()=>async(dispatch)=>{
+const generalapi = () => async (dispatch) => {
         dispatch(generalRequest());
         try {
                 const resp = await api.get('/general-settings');
@@ -20,7 +20,7 @@ const generalapi=()=>async(dispatch)=>{
                 dispatch(generalFailure())
         }
 }
-const aboutapi=()=>async(dispatch)=>{
+const aboutapi = () => async (dispatch) => {
         dispatch(aboutRequest());
         try {
                 const resp = await api.get('/about');
@@ -30,7 +30,7 @@ const aboutapi=()=>async(dispatch)=>{
                 dispatch(aboutFailure())
         }
 }
-const skillsapi=()=>async(dispatch)=>{
+const skillsapi = () => async (dispatch) => {
         dispatch(skillRequest());
         try {
                 const resp = await api.get('/skills');
@@ -40,7 +40,7 @@ const skillsapi=()=>async(dispatch)=>{
                 dispatch(skillFailure())
         }
 }
-const resumeapi=()=>async(dispatch)=>{
+const resumeapi = () => async (dispatch) => {
         dispatch(resumeRequest());
         try {
                 const resp = await api.get('/resume');
@@ -50,7 +50,7 @@ const resumeapi=()=>async(dispatch)=>{
                 dispatch(resumeFailure())
         }
 }
-const serviceapi=()=>async(dispatch)=>{
+const serviceapi = () => async (dispatch) => {
         dispatch(serviceRequest());
         try {
                 const resp = await api.get('/service');
@@ -60,7 +60,7 @@ const serviceapi=()=>async(dispatch)=>{
                 dispatch(serviceFailure())
         }
 }
-const portfolioapi=()=>async(dispatch)=>{
+const portfolioapi = () => async (dispatch) => {
         dispatch(portfolioRequest());
         try {
                 const resp = await api.get('/portfolio');
@@ -70,7 +70,7 @@ const portfolioapi=()=>async(dispatch)=>{
                 dispatch(portfolioFailure())
         }
 }
-const testimonialsapi=()=>async(dispatch)=>{
+const testimonialsapi = () => async (dispatch) => {
         dispatch(testimonialsRequest());
         try {
                 const resp = await api.get('/testimonial');

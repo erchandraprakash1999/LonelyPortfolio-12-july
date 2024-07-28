@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#counter-rem::-webkit-outer-spin-button,
+#counter-rem::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide the spinner controls for Firefox */
+#counter-rem {
+  -moz-appearance: textfield;
+}
