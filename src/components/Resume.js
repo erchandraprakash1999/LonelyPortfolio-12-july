@@ -4,6 +4,8 @@ import colors from 'tailwindcss/colors';
 import { resume } from '../data';
 import PortFolioActions from '../RequestServices/PortFolioActions';
 import { useDispatch, useSelector } from 'react-redux';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function Resume({theme}) {
     const {portfolio} = useSelector((store)=>store)
   const user = portfolio.user?.data;
@@ -11,11 +13,13 @@ export default function Resume({theme}) {
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(PortFolioActions.resumeapi())
+    AOS.init()
   },[])
   return (
     <>
     <Element name='resume'> <div className="pb-16"></div> </Element>
-      <div className=" mx-auto bg-[linear-gradient(180deg,#f2f6f9,#fff)]  rounded-lg shadow-lg text-[#5a656e] text-xl font-ChakraPetch">
+      <div className=" mx-auto bg-[linear-gradient(180deg,#f2f6f9,#fff)]  rounded-lg shadow-lg text-[#5a656e] text-xl font-ChakraPetch"   data-aos="zoom-in-up"  data-aos-easing="linear"
+     data-aos-duration="1500">
         <div className="container mx-auto px-4 py-6">
         <header className="mb-8">
             <h1 className="text-4xl font-bold text-[#345676] pb-3 border-b-4  w-min font-RobotoSlab" style={{borderColor:colors[theme][800]}}>{data?.title}</h1>

@@ -5,12 +5,15 @@ import colors from 'tailwindcss/colors';
 import { Element } from 'react-scroll';
 import PortFolioActions from '../RequestServices/PortFolioActions';
 import { useDispatch, useSelector } from 'react-redux';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function PortfolioImage({theme}) {
     const [active,setActive] = useState('all');
     const {portfolio} = useSelector((store)=>store)
     const data = portfolio.portfolioImages?.data;
     const dispatch = useDispatch();
     useEffect(()=>{
+        AOS.init()
       dispatch(PortFolioActions.portfolioapi())
     },[])
     function handleTab(val){
@@ -19,7 +22,9 @@ export default function PortfolioImage({theme}) {
   return (
     <>
         <Element name='portfolio'> <div className="pb-16"></div> </Element>
-      <section id="portfolio" className="portfolio section-bg bg-[linear-gradient(180deg,#f2f6f9,#fff)] font-ChakraPetch">
+      <section id="portfolio"data-aos="fade-left"
+    data-aos-offset="300"
+    data-aos-easing="ease-in-sine"  data-aos-duration="2000"className="portfolio section-bg bg-[linear-gradient(180deg,#f2f6f9,#fff)] font-ChakraPetch">
         <div className="container mx-auto px-4 py-6">
             <div className=" mb-8">
                 <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 w-min

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaFacebook, FaSquareInstagram, FaTwitter } from 'react-icons/fa6';
 import { IoMailOutline } from 'react-icons/io5';
@@ -9,6 +10,8 @@ import colors from 'tailwindcss/colors';
 import { contact } from '../data';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ContactForm = ({ theme }) => {
   const { portfolio } = useSelector((store) => store);
@@ -20,7 +23,10 @@ const ContactForm = ({ theme }) => {
   const ManageChange = (e) => {
     setFields({ ...fields, [e.target.name]: e.target.value });
   };
-
+  useEffect(() => {
+   
+    AOS.init(); // Initialize AOS
+  }, []);
   const manageSubmit = async (e) => {
     e.preventDefault();
     if (Validate()) {
@@ -94,7 +100,10 @@ const ContactForm = ({ theme }) => {
   return (
     <div className='bg-[linear-gradient(180deg,#f2f6f9,#fff)] text-lg font-ChakraPetch'>
       <Element name='contact'> <div className="pb-16"></div> </Element>
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto px-4 py-6" data-aos="fade-right"
+     data-aos-offset="300"
+    
+     data-aos-duration="1000">
         <div className="mb-8">
           <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 w-min font-RobotoSlab whitespace-nowrap" style={{ borderColor: colors[theme][800] }}>{data?.contact_title}</h2>
           <p className="mt-6 text-xl text-gray-600 font-Poppins">
@@ -123,7 +132,10 @@ const ContactForm = ({ theme }) => {
               </div>
             </div>
           </div>
-          <form className="space-y-4 w-full lg:w-[40%]" onSubmit={manageSubmit}>
+          <form className="space-y-4 w-full lg:w-[40%]" onSubmit={manageSubmit} data-aos="fade-left"
+     data-aos-offset="300"
+    
+     data-aos-duration="1000">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input type="text" placeholder="Your Name" className="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500" name="name" onChange={ManageChange} />
               {errors.name ? (<h3 style={{ color: "red" }}>{errors.name}</h3>) : ""}

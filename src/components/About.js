@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS CSS
 import PortFolioActions from '../RequestServices/PortFolioActions';
 import colors from 'tailwindcss/colors';
+
 export default function About({ theme }) {
   const { portfolio } = useSelector((store) => store);
   const data = portfolio.about?.data;
@@ -9,6 +12,7 @@ export default function About({ theme }) {
 
   useEffect(() => {
     dispatch(PortFolioActions.aboutapi());
+    AOS.init(); // Initialize AOS
   }, [dispatch]);
 
   if (!data) {
@@ -16,7 +20,11 @@ export default function About({ theme }) {
   }
 
   return (
-    <section id="about">
+    <section id="about"  data-aos="fade-up"
+     data-aos-offset="300"
+    
+     data-aos-duration="1000"
+   >
       <div className="bg-gray-100 p-6">
         <div className="flex flex-wrap">
           <div className="md:w-1/2 pl-15">
@@ -29,11 +37,11 @@ export default function About({ theme }) {
             <p className="pt-2 text-xl text-gray-600" >{data.description}</p>
             <img src={data.image} alt="About" className="w-4/5 mt-4" />
             <div className="pt-2 flex space-x-2">
-             <a href=""><i className="fa-brands fa-facebook p-3 rounded-full border-2  bg-white text-blue-700"    style={{ borderColor: colors[theme][500] }}></i></a> 
-             <a href=""> <i className="fa-brands fa-instagram p-3 rounded-full border-2 bg-white  text-rose-400"  style={{ borderColor: colors[theme][500] }}></i></a> 
-             <a href=""><i className="fa-brands fa-twitter p-3 rounded-full border-2  bg-white  text-blue-700"  style={{ borderColor: colors[theme][500] }}></i></a> 
-             <a href=""><i className="fa-brands fa-linkedin p-3 rounded-full border-2  bg-white  text-sky-500"  style={{ borderColor: colors[theme][500] }}></i></a> 
-             <a href=""><i className="fa-brands fa-github p-3 rounded-full border-2   bg-white  text-black"  style={{ borderColor: colors[theme][500] }}></i></a> 
+             <a href=""><i className="fa-brands fa-facebook p-3 rounded-full border-2   text-blue-700"    style={{ borderColor: colors[theme][500],backgroundColor: colors[theme][50]}}></i></a> 
+             <a href=""> <i className="fa-brands fa-instagram p-3 rounded-full border-2   text-rose-400"  style={{ borderColor: colors[theme][500],backgroundColor: colors[theme][50]}}></i></a> 
+             <a href=""><i className="fa-brands fa-twitter p-3 rounded-full border-2   text-blue-700"  style={{ borderColor: colors[theme][500],backgroundColor: colors[theme][50] }}></i></a> 
+             <a href=""><i className="fa-brands fa-linkedin p-3 rounded-full border-2   text-sky-500"  style={{ borderColor: colors[theme][500] ,backgroundColor: colors[theme][50]}}></i></a> 
+             <a href=""><i className="fa-brands fa-github p-3 rounded-full border-2    text-black"  style={{ borderColor: colors[theme][500] ,backgroundColor: colors[theme][50]}}></i></a> 
             </div>
           </div>
           <div className="md:w-1/2 mt-20">
@@ -107,6 +115,7 @@ export default function About({ theme }) {
           </div>
         </div>
       </div>
+     
     </section>
   );
 }
