@@ -14,6 +14,8 @@ export default function About({ theme }) {
   const isMedium = useMediaQuery({ query: '(min-width: 1150px)' });
 
   const [socialLinks, setSocialLinks] = useState([]);
+  const [resume, setResume] = useState('');
+  const [resumeKey, setResumeKey] = useState('');
 
   useEffect(() => {
     dispatch(PortFolioActions.aboutapi());
@@ -25,6 +27,14 @@ export default function About({ theme }) {
         setSocialLinks(data['social_links']);
       } catch (error) {
         console.error('Error fetching navbar data:', error);
+      }
+      try {
+        const response = await axios.get('https://single-portfolio.skytravelsjeddah.com/api/resume');
+        const resumeData = response.data.data;
+        setResume(resumeData.resume);
+        setResumeKey(Object.keys(resumeData).find(key => key.toLowerCase().includes('resume')));
+      } catch (error) {
+        console.error('Error fetching resume data:', error);
       }
     };
     fetchNavbarData();
@@ -70,13 +80,13 @@ export default function About({ theme }) {
           </div>
           <div className="md:w-1/2 mt-20">
             <h1 className="text-3xl font-bold pb-3 w-min font-RobotoSlab whitespace-nowrap text-black">
-              {data.about_information?.title || 'I am Vinay Kumar'}
+              {data.my_title}
             </h1>
             <h6 className="text-lg mt-0 font-RobotoSlab text-gray-600">
               A Lead <span className="text-gradient ">Stack & Mern Stack Developer</span> based in <span className="text-gradient">INDIA</span>
             </h6>
             <p className="text-sm mt-4 font-RobotoSlab text-gray-600">
-              As a Creative Software Developer, I combine my technical expertise with a deep understanding of design principles to create engaging digital solutions. My services include:
+              {data.my_description}
             </p>
 
             {isMedium ? (
@@ -105,11 +115,11 @@ export default function About({ theme }) {
                     </tbody>
                   </table>
                 </div>
-                <a href={data.resume} target="_blank" rel="noopener noreferrer">
-  <button className="mt-4 text-white py-2 px-4 rounded font-RobotoSlab font-bold" style={{ backgroundColor: colors[theme][400] }}>
-    Browse Resume
-  </button>
-</a>
+                <a href={resume} target="_blank" rel="noopener noreferrer">
+                  <button className="mt-4 text-white py-2 px-4 rounded font-RobotoSlab font-bold" style={{ backgroundColor: colors[theme][400] }}>
+                    {resumeKey}
+                  </button>
+                </a>
               </div>
             ) : (
               <div className="flex flex-wrap mt-4">
@@ -125,9 +135,9 @@ export default function About({ theme }) {
                     </tbody>
                   </table>
                 </div>
-                <a href="">
+                <a href={resume} target="_blank" rel="noopener noreferrer">
                   <button className="mt-4 text-white py-2 px-4 rounded font-RobotoSlab font-bold" style={{ backgroundColor: colors[theme][400] }}>
-                    Browse Resume
+                    {resumeKey}
                   </button>
                 </a>
               </div>
