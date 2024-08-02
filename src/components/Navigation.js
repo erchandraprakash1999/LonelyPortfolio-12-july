@@ -41,19 +41,16 @@ export default function Navigation({ theme, handleTheme }) {
             </Link>
           </li>
         ))}
-       
       </ul>
       <header className="sticky top-0 z-30 text-white" style={{ backgroundColor: colors[theme][400] }}>
         <nav className="h-[70px] shadow-lg">
           <div className="flex justify-between items-center w-[85%] h-full mx-auto">
-            <div className="uppercase text-4xl font-semibold font-RobotoSlab">
-              {navbar.name}
-            </div>
+            <div className="uppercase text-4xl font-semibold font-RobotoSlab" dangerouslySetInnerHTML={{ __html: navbar.name }} />
             <div className="h-min font-sans hidden lg:block font-Poppins">
               <ul className="list-none flex items-center gap-6">
                 {navbar.navItems.map((item, i) => (
                   <li key={i} className="capitalize cursor-pointer font-bold h-min">
-                    <Link to={item} className="" smooth duration={100}>
+                    <Link to={item} smooth duration={100}>
                       {item}
                     </Link>
                   </li>

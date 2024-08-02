@@ -113,47 +113,41 @@ const ContactForm = ({ theme }) => {
       </Element>
       <div className="container mx-auto px-4 py-6" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000">
         <div className="mb-8">
-          <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 w-min font-RobotoSlab whitespace-nowrap" style={{ borderColor: colors[theme][800] }}>
-            {data?.contact_title}
-          </h2>
-          <p className="mt-6 text-xl text-gray-600 font-Poppins">
-            {data?.contact_description}
-          </p>
+          <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4 w-min font-RobotoSlab whitespace-nowrap" style={{ borderColor: colors[theme][800] }} dangerouslySetInnerHTML={{ __html: data?.contact_title }} />
+          <p className="mt-6 text-xl text-gray-600 font-Poppins" dangerouslySetInnerHTML={{ __html: data?.contact_description }} />
         </div>
         <div className="flex flex-col lg:flex-row">
           <div className="flex flex-col justify-between mb-8 w-full lg:w-[60%]">
             <div className="mb-4 md:mb-0">
               <div>
-                <h3 className="text-2xl font-bold uppercase" style={{ color: colors[theme][600] }}>{data?.app_name}</h3>
-                <p className="mt-2 text-gray-600">
-                  {data?.header_description}
-                </p>
+                <h3 className="text-2xl font-bold uppercase" style={{ color: colors[theme][600] }} dangerouslySetInnerHTML={{ __html: data?.app_name }} />
+                <p className="mt-2 text-gray-600" dangerouslySetInnerHTML={{ __html: data?.header_description }} />
                 <div className="flex space-x-4 mt-4">
-                {socialLinks.map((social) => (
-                <a key={social.id} href={social.link} target="_blank" rel="noopener noreferrer">
-                  <i
-                    className={`fa-brands ${social.icon} p-3 rounded-full border-2`}
-                    style={{
-                      borderColor: colors[theme][500],
-                      backgroundColor: colors[theme][50],
-                    }}
-                  ></i>
-                </a>
-              ))}
+                  {socialLinks.map((social) => (
+                    <a key={social.id} href={social.link} target="_blank" rel="noopener noreferrer">
+                      <i
+                        className={`fa-brands ${social.icon} p-3 rounded-full border-2`}
+                        style={{
+                          borderColor: colors[theme][500],
+                          backgroundColor: colors[theme][50],
+                        }}
+                      ></i>
+                    </a>
+                  ))}
                 </div>
               </div>
               <div className="space-y-4 my-5 text-gray-600">
                 <p className='flex items-center'>
                   <LuMapPin fontSize={40} className="mr-2" style={{ color: colors[theme][500] }} />
-                  <span>{data?.address}</span>
+                  <span dangerouslySetInnerHTML={{ __html: data?.address }} />
                 </p>
                 <a href={`mailto:${data?.email1}`} className='flex items-center'>
                   <IoMailOutline fontSize={40} className="mr-2" style={{ color: colors[theme][500] }} />
-                  <span>{data?.email1}</span>
+                  <span dangerouslySetInnerHTML={{ __html: data?.email1 }} />
                 </a>
                 <a href={`tel:${data?.number1}`} style={{ color: colors[theme][500] }} className='flex items-center'>
                   <MdOutlinePhoneIphone fontSize={40} className="fas fa-phone mr-2" />
-                  <span>{data?.number1}</span>
+                  <span dangerouslySetInnerHTML={{ __html: data?.number1 }} />
                 </a>
               </div>
             </div>
@@ -185,7 +179,7 @@ const ContactForm = ({ theme }) => {
           </form>
         </div>
         <footer className="mt-16 text-center text-gray-600">
-          <p>{data?.copyright_description}</p>
+          <p dangerouslySetInnerHTML={{ __html: data?.copyright_description }} />
           <p>Designed by <a href="https://devanti.com" style={{ color: colors[theme][500] }}>Devanti Technologies Pvt.Ltd</a></p>
         </footer>
       </div>

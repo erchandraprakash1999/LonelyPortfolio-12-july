@@ -59,10 +59,9 @@ export default function About({ theme }) {
             <h2
               className="text-4xl font-bold pb-3 border-b-4 w-min font-RobotoSlab whitespace-nowrap text-black"
               style={{ borderColor: colors[theme][800] }}
-            >
-              {data.title}
-            </h2>
-            <p className="pt-2 text-xl text-gray-600">{data.description}</p>
+              dangerouslySetInnerHTML={{ __html: data.title }}
+            />
+            <p className="pt-2 text-xl text-gray-600" dangerouslySetInnerHTML={{ __html: data.description }} />
             <img src={data.image} alt="About" className="w-4/5 mt-4" />
             <div className="flex gap-4 mt-4">
               {socialLinks.map((social) => (
@@ -79,15 +78,11 @@ export default function About({ theme }) {
             </div>
           </div>
           <div className="md:w-1/2 mt-20">
-            <h1 className="text-3xl font-bold pb-3 w-min font-RobotoSlab whitespace-nowrap text-black">
-              {data.my_title}
-            </h1>
+            <h1 className="text-3xl font-bold pb-3 w-min font-RobotoSlab whitespace-nowrap text-black" dangerouslySetInnerHTML={{ __html: data.my_title }} />
             <h6 className="text-lg mt-0 font-RobotoSlab text-gray-600">
-              A Lead <span className="text-gradient ">Stack & Mern Stack Developer</span> based in <span className="text-gradient">INDIA</span>
+              A Lead <span className="text-gradient">Stack & Mern Stack Developer</span> based in <span className="text-gradient">INDIA</span>
             </h6>
-            <p className="text-sm mt-4 font-RobotoSlab text-gray-600">
-              {data.my_description}
-            </p>
+            <p className="text-sm mt-4 font-RobotoSlab text-gray-600" dangerouslySetInnerHTML={{ __html: data.my_description }} />
 
             {isMedium ? (
               <div className="flex flex-wrap mt-4">
@@ -96,8 +91,8 @@ export default function About({ theme }) {
                     <tbody>
                       {aboutInformationEntries.slice(0, halfLength).map(([key, value]) => (
                         <tr className="border-b p-4" key={key}>
-                          <td className="font-semibold border-r pr-2 p-2">{key}</td>
-                          <td className="p-2">{value}</td>
+                          <td className="font-semibold border-r pr-2 p-2" dangerouslySetInnerHTML={{ __html: key }} />
+                          <td className="p-2" dangerouslySetInnerHTML={{ __html: value }} />
                         </tr>
                       ))}
                     </tbody>
@@ -108,8 +103,8 @@ export default function About({ theme }) {
                     <tbody>
                       {aboutInformationEntries.slice(halfLength).map(([key, value]) => (
                         <tr className="border-b p-4" key={key}>
-                          <td className="font-semibold border-r pr-2 p-2">{key}</td>
-                          <td className="p-2">{value}</td>
+                          <td className="font-semibold border-r pr-2 p-2" dangerouslySetInnerHTML={{ __html: key }} />
+                          <td className="p-2" dangerouslySetInnerHTML={{ __html: value }} />
                         </tr>
                       ))}
                     </tbody>
@@ -128,8 +123,8 @@ export default function About({ theme }) {
                     <tbody>
                       {aboutInformationEntries.map(([key, value]) => (
                         <tr className="border-b p-4" key={key}>
-                          <td className="font-semibold border-r pr-2 p-2">{key}</td>
-                          <td className="p-2">{value}</td>
+                          <td className="font-semibold border-r pr-2 p-2" dangerouslySetInnerHTML={{ __html: key }} />
+                          <td className="p-2" dangerouslySetInnerHTML={{ __html: value }} />
                         </tr>
                       ))}
                     </tbody>
