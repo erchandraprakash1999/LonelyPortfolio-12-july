@@ -7,11 +7,14 @@ import colors from 'tailwindcss/colors';
 import { Element } from 'react-scroll';
 import PortFolioActions from '../RequestServices/PortFolioActions';
 import { useDispatch, useSelector } from 'react-redux';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function Testimonials({theme}) {
   const {portfolio} = useSelector((store)=>store)
   const data = portfolio.testimonials?.data;
   const dispatch = useDispatch();
   useEffect(()=>{
+    AOS.init()
     dispatch(PortFolioActions.testimonialsapi())
   },[])
     const settings = {
@@ -27,8 +30,8 @@ export default function Testimonials({theme}) {
   return (
     <>
     <Element name='testimonials'> <div className="pb-16"></div> </Element>
-    <div className=' bg-[linear-gradient(180deg,#f2f6f9,#fff)] font-ChakraPetch '>
-      <section id="testimonials" className=" py-8">
+    <div className=' bg-[linear-gradient(180deg,#f2f6f9,#fff)] font-ChakraPetch ' >
+      <section id="testimonials" className=" py-8" data-aos="fade-up" data-aos-offset="300" data-aos-duration="1000">
         <div className="container mx-auto px-4 py-6 ">
             <div className=" mb-12">
                 <h2 className="text-4xl font-bold text-[#345676] pb-3 border-b-4  w-min

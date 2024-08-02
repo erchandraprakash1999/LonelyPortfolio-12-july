@@ -18,9 +18,7 @@ export default function Services({theme}) {
   return (
     <>
     <Element name='services'> <div className="pb-16"></div> </Element>
-    <div className='bg-[linear-gradient(180deg,#f2f6f9,#fff)] font-ChakraPetch' data-aos="flip-left"
-     data-aos-easing="ease-out-cubic"
-     data-aos-duration="1500">
+    <div className='bg-[linear-gradient(180deg,#f2f6f9,#fff)] font-ChakraPetch'data-aos="fade-up" data-aos-offset="300" data-aos-duration="1000">
        <div className="container mx-auto px-4 py-6">
         <section className=" mb-8">
             <h2 className="text-4xl font-bold text-gray-900 pb-3 border-b-4 w-min font-RobotoSlab" style={{borderColor:colors[theme][800]}}>{data?.title}</h2>

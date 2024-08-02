@@ -1,18 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS CSS
 import PortFolioActions from '../RequestServices/PortFolioActions';
 import colors from 'tailwindcss/colors';
+import { useMediaQuery } from 'react-responsive';
+import axios from 'axios';
 
 export default function About({ theme }) {
   const { portfolio } = useSelector((store) => store);
   const data = portfolio.about?.data;
   const dispatch = useDispatch();
+  const isMedium = useMediaQuery({ query: '(min-width: 1150px)' });
+
+  const [socialLinks, setSocialLinks] = useState([]);
 
   useEffect(() => {
     dispatch(PortFolioActions.aboutapi());
     AOS.init(); // Initialize AOS
+    const fetchNavbarData = async () => {
+      try {
+        const response = await axios.get('https://single-portfolio.skytravelsjeddah.com/api/settings');
+        const data = response.data.data;
+        setSocialLinks(data['social_links']);
+      } catch (error) {
+        console.error('Error fetching navbar data:', error);
+      }
+    };
+    fetchNavbarData();
   }, [dispatch]);
 
   if (!data) {
@@ -23,14 +38,11 @@ export default function About({ theme }) {
   const aboutInformationEntries = data.about_information
     ? Object.entries(data.about_information)
     : [];
+    
+  const halfLength = Math.ceil(aboutInformationEntries.length / 2);
 
   return (
-    <section
-      id="about"
-      data-aos="fade-up"
-      data-aos-offset="300"
-      data-aos-duration="1000"
-    >
+    <section id="about" data-aos="fade-up" data-aos-offset="300" data-aos-duration="1000">
       <div className="bg-gray-100 p-6">
         <div className="flex flex-wrap">
           <div className="md:w-1/2 pl-15">
@@ -42,52 +54,18 @@ export default function About({ theme }) {
             </h2>
             <p className="pt-2 text-xl text-gray-600">{data.description}</p>
             <img src={data.image} alt="About" className="w-4/5 mt-4" />
-            <div className="pt-2 flex space-x-2">
-              <a href="">
-                <i
-                  className="fa-brands fa-facebook p-3 rounded-full border-2 text-blue-700"
-                  style={{
-                    borderColor: colors[theme][500],
-                    backgroundColor: colors[theme][50],
-                  }}
-                ></i>
-              </a>
-              <a href="">
-                <i
-                  className="fa-brands fa-instagram p-3 rounded-full border-2 text-rose-400"
-                  style={{
-                    borderColor: colors[theme][500],
-                    backgroundColor: colors[theme][50],
-                  }}
-                ></i>
-              </a>
-              <a href="">
-                <i
-                  className="fa-brands fa-twitter p-3 rounded-full border-2 text-blue-700"
-                  style={{
-                    borderColor: colors[theme][500],
-                    backgroundColor: colors[theme][50],
-                  }}
-                ></i>
-              </a>
-              <a href="">
-                <i
-                  className="fa-brands fa-linkedin p-3 rounded-full border-2 text-sky-500"
-                  style={{
-                    borderColor: colors[theme][500],
-                    backgroundColor: colors[theme][50],
-                  }}
-                ></i>
-              </a>
-              <a href="">
-                <i
-                  className="fa-brands fa-github p-3 rounded-full border-2 text-black"
-                  style={{
-                    borderColor: colors[theme][500],
-                    backgroundColor: colors[theme][50],
-                  }}
-                ></i>
-              </a>
+            <div className="flex gap-4 mt-4">
+              {socialLinks.map((social) => (
+                <a key={social.id} href={social.link} target="_blank" rel="noopener noreferrer">
+                  <i
+                    className={`fa-brands ${social.icon} p-3 rounded-full border-2`}
+                    style={{
+                      borderColor: colors[theme][500],
+                      backgroundColor: colors[theme][50],
+                    }}
+                  ></i>
+                </a>
+              ))}
             </div>
           </div>
           <div className="md:w-1/2 mt-20">
@@ -100,28 +78,60 @@ export default function About({ theme }) {
             <p className="text-sm mt-4 font-RobotoSlab text-gray-600">
               As a Creative Software Developer, I combine my technical expertise with a deep understanding of design principles to create engaging digital solutions. My services include:
             </p>
-            <div className="flex flex-wrap mt-4">
-              <div className="md:w-full p-3">
-                <table className="table-auto w-full border-collapse border">
-                  <tbody>
-                    {aboutInformationEntries.map(([key, value]) => (
-                      <tr className="border-b p-4" key={key}>
-                        <td className="font-semibold border-r pr-2 p-2">{key}</td>
-                        <td className="p-2">{value}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+
+            {isMedium ? (
+              <div className="flex flex-wrap mt-4">
+                <div className="md:w-1/2 p-3">
+                  <table className="table-auto w-full border-collapse border">
+                    <tbody>
+                      {aboutInformationEntries.slice(0, halfLength).map(([key, value]) => (
+                        <tr className="border-b p-4" key={key}>
+                          <td className="font-semibold border-r pr-2 p-2">{key}</td>
+                          <td className="p-2">{value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="md:w-1/2 p-3">
+                  <table className="table-auto w-full border-collapse border">
+                    <tbody>
+                      {aboutInformationEntries.slice(halfLength).map(([key, value]) => (
+                        <tr className="border-b p-4" key={key}>
+                          <td className="font-semibold border-r pr-2 p-2">{key}</td>
+                          <td className="p-2">{value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <a href={data.resume} target="_blank" rel="noopener noreferrer">
+  <button className="mt-4 text-white py-2 px-4 rounded font-RobotoSlab font-bold" style={{ backgroundColor: colors[theme][400] }}>
+    Browse Resume
+  </button>
+</a>
               </div>
-              <a href="">
-                <button
-                  className="mt-4 text-white py-2 px-4 rounded font-RobotoSlab font-bold"
-                  style={{ backgroundColor: colors[theme][400] }}
-                >
-                  Browse Resume
-                </button>
-              </a>
-            </div>
+            ) : (
+              <div className="flex flex-wrap mt-4">
+                <div className="md:w-full p-3">
+                  <table className="table-auto w-full border-collapse border">
+                    <tbody>
+                      {aboutInformationEntries.map(([key, value]) => (
+                        <tr className="border-b p-4" key={key}>
+                          <td className="font-semibold border-r pr-2 p-2">{key}</td>
+                          <td className="p-2">{value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <a href="">
+                  <button className="mt-4 text-white py-2 px-4 rounded font-RobotoSlab font-bold" style={{ backgroundColor: colors[theme][400] }}>
+                    Browse Resume
+                  </button>
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>
