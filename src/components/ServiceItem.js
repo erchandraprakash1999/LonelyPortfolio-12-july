@@ -16,7 +16,13 @@ export default function ServiceItem({ item, theme }) {
           className="group-hover:bg-white p-3 rounded-full mb-5 text-white group-hover:text-pink-600"
           style={{ backgroundColor: hover ? 'white' : colors[theme][600], color: hover ? colors[theme][600] : 'white' }}
         >
-          {item.icon}
+          <i
+            className={`fa-brands ${item.icon} p-3 rounded-full border-2`}
+            style={{
+              borderColor: colors[theme][400],
+              
+            }}
+          ></i>
         </div>
       </div>
       <h3 className="mb-5 text-2xl font-semibold text-gray-900 group-hover:text-white" dangerouslySetInnerHTML={{ __html: item.name }} />

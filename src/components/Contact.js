@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaFacebook, FaSquareInstagram, FaTwitter } from 'react-icons/fa6';
+
 import { IoMailOutline } from 'react-icons/io5';
 import { LuMapPin } from 'react-icons/lu';
 import { MdOutlinePhoneIphone } from 'react-icons/md';

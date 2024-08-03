@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+
 export default function Services({ theme }) {
   const { portfolio } = useSelector((store) => store);
   const data = portfolio.service?.data;
