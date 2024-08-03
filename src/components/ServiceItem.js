@@ -26,7 +26,7 @@ export default function ServiceItem({ item, theme }) {
         </div>
       </div>
       <h3 className="mb-5 text-2xl font-semibold text-gray-900 group-hover:text-white" dangerouslySetInnerHTML={{ __html: item.name }} />
-      <p className="mt-2 text-gray-600 group-hover:text-slate-100" dangerouslySetInnerHTML={{ __html: item.description }} />
+      <p className="mt-2 text-gray-600 group-hover:text-slate-100 text-justify" dangerouslySetInnerHTML={{ __html: item.description }} />
     </div>
   );
 }
