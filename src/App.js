@@ -15,13 +15,13 @@ import { useSelector } from 'react-redux';
 function App() {
   const { portfolio } = useSelector((store) => store);
   const data = portfolio.user?.data;
-  const [theme, setTheme] = useState("pink"); 
+  const [theme, setTheme] = useState("emerald"); 
 
-  useEffect(() => {
-    if (data) {
-      setTheme(data.theme_color); 
-    }
-  }, [data]); 
+ // useEffect(() => {
+    //if (data) {
+     // setTheme(data.theme_color); 
+    //}
+  //}, [data]); 
   return (
     <div className='relative'>
       <HeaderImageSection theme={theme} />
