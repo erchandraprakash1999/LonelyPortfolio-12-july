@@ -36,7 +36,7 @@ export default function Resume({ theme }) {
                                     <h3 className="text-xl font-bold text-gray-900 mb-3" dangerouslySetInnerHTML={{ __html: data?.summary_title || '' }}></h3>
                                     <p className="text-gray-700 mb-4 italic" dangerouslySetInnerHTML={{ __html: data?.summary_content || '' }}></p>
                                     <ul className="text-gray-700 flex flex-col gap-2">
-                                        {/* Add list items dynamically if needed */}
+                                     
                                     </ul>
                                 </div>
                             </div>

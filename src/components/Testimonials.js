@@ -53,7 +53,7 @@ export default function Testimonials({ theme }) {
           <div className="container mx-auto px-4 py-6">
             <div className="mb-12">
               <h2
-                className="text-4xl font-bold text-[#345676] pb-3 border-b-4 w-min font-RobotoSlab"
+                className="text-4xl font-bold text-[#345676] pb-3 border-b-4 w-min font-RobotoSlab whitespace-nowrap"
                 style={{ borderColor: colors[theme][800] }}
                 dangerouslySetInnerHTML={{ __html: data?.title }}
               ></h2>
@@ -62,13 +62,15 @@ export default function Testimonials({ theme }) {
             <div className="space-x-5">
               <Slider {...settings}>
                 {data?.items.map((review, idx) => (
-                  <div className="bg-white p-6 rounded-lg shadow-lg text-center relative mb-36 pb-16" key={idx}>
+                  <div key={idx} className="px-2" >
+                  <div  className="bg-white p-6 rounded-lg shadow-lg text-center relative mb-36 pb-16 border-2 " key={idx} >
                     <p className="text-xl mb-4 text-gray-600 italic" dangerouslySetInnerHTML={{ __html: review.feedback }}></p>
-                    <div className="absolute -bottom-32">
+                    <div className="absolute -bottom-32" >
                       <img src={review.image} className="w-28 h-28 rounded-full mx-auto mb-4 border-t-8 border-white" style={{ borderColor: colors[theme][500] }} alt={review.name} />
                       <h4 className="text-xl font-semibold" style={{ color: colors[theme][500] }} dangerouslySetInnerHTML={{ __html: review.name }}></h4>
                       <p className="text-gray-600" dangerouslySetInnerHTML={{ __html: review.profession }}></p>
                     </div>
+                  </div>
                   </div>
                 ))}
               </Slider>
