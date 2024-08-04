@@ -120,36 +120,50 @@ const ContactForm = ({ theme }) => {
                   <LuMapPin fontSize={40} className="mr-2" style={{ color: colors[theme][450] }} />
                   <span dangerouslySetInnerHTML={{ __html: data?.address }} />
                 </p>
-                <div className="flex items-center space-x-4">
-                  {data?.email1 && (
-                    <a href={`mailto:${data.email1}`} className='flex items-center'>
-                      <IoMailOutline fontSize={40} className="mr-2" style={{ color: colors[theme][450] }} />
-                      <span dangerouslySetInnerHTML={{ __html: data.email1 }} />
-                    </a>
-                  )}
-                  {data?.email1 && data?.email2 && <h1 className='font-bold font-Agbalumo text-3xl mb-2' style={{ color: colors[theme][500] }}>OR</h1>}
-                  {data?.email2 && (
-                    <a href={`mailto:${data.email2}`} className='flex items-center'>
-                      <IoMailOutline fontSize={40} className="mr-2" style={{ color: colors[theme][450] }} />
-                      <span dangerouslySetInnerHTML={{ __html: data.email2 }} />
-                    </a>
-                  )}
-                </div>
-                <div className="flex items-center space-x-4">
-                  {data?.number1 && (
-                    <a href={`tel:${data?.number1}`} style={{ color: colors[theme][450] }} className='flex items-center'>
-                      <MdOutlinePhoneIphone fontSize={40} className="mr-2" />
-                      <span dangerouslySetInnerHTML={{ __html: data?.number1 }} className='text-gray-600' />
-                    </a>
-                  )}
-                  {data?.number1 && data?.number2 && <h1 className='font-bold font-Agbalumo text-3xl mb-2' style={{ color: colors[theme][500] }}>OR</h1>}
-                  {data?.number2 && (
-                    <a href={`tel:${data?.number2}`} style={{ color: colors[theme][450] }} className='flex items-center'>
-                      <MdOutlinePhoneIphone fontSize={40} className="mr-2" />
-                      <span dangerouslySetInnerHTML={{ __html: data?.number2 }} className='text-gray-600' />
-                    </a>
-                  )}
-                </div>
+                <div className='mt-4 '>
+                  <div className="mt-4">
+    {data?.email1 && (
+        <a href={`mailto:${data.email1}`} className='flex items-center mt-4'> {/* Added mt-4 for margin top */}
+            <IoMailOutline fontSize={40} className="mr-2" style={{ color: colors[theme][450] }} />
+            <span dangerouslySetInnerHTML={{ __html: data.email1 }} />
+        </a>
+    )}
+    {data?.email1 && data?.email2 && (
+        <h1 className='font-bold font-Agbalumo text-3xl mb-2 mt-4 ml-12' style={{ color: colors[theme][500] }}> {/* Added mt-4 for margin top */}
+            OR
+        </h1>
+    )}
+    {data?.email2 && (
+        <a href={`mailto:${data.email2}`} className='flex items-center mt-4'> {/* Added mt-4 for margin top */}
+            <IoMailOutline fontSize={40} className="mr-2" style={{ color: colors[theme][450] }} />
+            <span dangerouslySetInnerHTML={{ __html: data.email2 }} />
+        </a>
+    )}
+    </div>
+    <div className="mt-8">
+
+    {data?.number1 && (
+        <a href={`tel:${data?.number1}`} style={{ color: colors[theme][450] }} className='flex items-center mt-4'> {/* Added mt-4 for margin top */}
+            <MdOutlinePhoneIphone fontSize={40} className="mr-2" />
+            <span dangerouslySetInnerHTML={{ __html: data?.number1 }} className='text-gray-600' />
+        </a>
+    )}
+    
+    {data?.number1 && data?.number2 && (
+        <h1 className='font-bold font-Agbalumo text-3xl mb-2 mt-4 ml-12' style={{ color: colors[theme][500] }}> {/* Added mt-4 for margin top */}
+            OR
+        </h1>
+    )}
+    {data?.number2 && (
+        <a href={`tel:${data?.number2}`} style={{ color: colors[theme][450] }} className='flex items-center mt-4'> {/* Added mt-4 for margin top */}
+            <MdOutlinePhoneIphone fontSize={40} className="mr-2" />
+            <span dangerouslySetInnerHTML={{ __html: data?.number2 }} className='text-gray-600' />
+        </a>
+    )}
+    </div>
+</div>
+
+
               </div>
             </div>
           </div>
